@@ -27,8 +27,8 @@ class Manager {
     }
 
     askEmployeesToWork(office) {
-        for (let emp of this.employees) {
-            emp.work(office)
+        for (let employee of this.employees) {
+            employee.work(office)
         }
     }
 }
@@ -59,7 +59,8 @@ class Office {
     }
 
     startWorkDay() {
-        let manager = new Manager("Someone")
-        manager.askEmployeesToWork()
+        for (let manager of this.managers){
+            manager.askEmployeesToWork(this)
+        }
     }
 }
